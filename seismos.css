@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ντεγκραντέ από ένα βαθύ, όμορφο μπλε προς ένα πιο ανοιχτό */
+    background: linear-gradient(135deg, #1e3c72, #2a5298); 
+    min-height: 100vh; /* Αναγκάζει το φόντο να πιάνει όλο το ύψος της οθόνης */
+    margin: 0;
+    padding: 20px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.card {
+    background: linear-gradient(180deg, #ffffff, #e6f0ff);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    
+    /* ΔΙΟΡΘΩΣΗ: Λέμε στο Flexbox να στοιχίζει τους σεισμούς κάθετα */
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Οι σεισμοί (παράγραφοι) μέσα στην κάρτα */
+.card p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Αφαίρεση της γραμμής από τον τελευταίο σεισμό για ομορφιά */
+.card p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.errorDisplay {
+    color: red;
+    font-weight: bold;
+}
+
+/* --- RESPONSIVE DESIGN ΓΙΑ ΚΙΝΗΤΑ --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Λιγότερο κενό γύρω-γύρω για να κερδίσουμε χώρο */
+    }
+
+    button {
+        font-size: 1.2rem;    /* Μικραίνει ελαφρώς το κουμπί για να μην «μπουκώνει» την οθόνη */
+        padding: 12px 24px;   /* Μεγαλώνει η περιοχή πατήματος (ιδανικό για δάχτυλα) */
+        width: 100%;          /* Το κουμπί πιάνει όλο το πλάτος στο κινητό */
+        max-width: 300px;
+    }
+
+    .card {
+        width: 100%;          /* Η κάρτα απλώνεται για να εκμεταλλευτεί όλη την οθόνη */
+        padding: 15px;        /* Λίγο μικρότερο εσωτερικό περιθώριο */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .card p {
+        font-size: 0.95rem;   /* Μικραίνουν ελαφρώς τα γράμματα των σεισμών για να χωράνε */
+        line-height: 1.5;     /* Περισσότερος χώρος ανάμεσα στις γραμμές για ευκολότερη ανάγνωση */
+        padding-bottom: 10px;
+    }
+}
